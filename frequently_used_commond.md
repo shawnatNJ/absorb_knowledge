@@ -1,11 +1,12 @@
 
-#linux常用命令
+# linux常用命令
+
 |用途|命令|详细说明|
 |----|-----|----|
 |查找|grep -rn --color funcName * | |
-|查找|find -name "*.[c.h]" ! xargs grep funcName |！替换为竖杠 |
+|查找|find -name "*.[c.h]" \| xargs grep funcName | |
 |增强版查找|http://3ms.huawei.com/hi/group/2027319/blog_2268929.html?mapId=3605023 ||
-|查找并替换|find -name "*.lua" ! xargs sed -i 's/require("FeiBaseComm")/require("nphal_base")/g' |！替换为竖杠. 将所有lua文件中的require("FeiBaseComm")替换为require("nphal_base") |
+|查找并替换|find -name "*.lua" \| xargs sed -i 's/require("FeiBaseComm")/require("nphal_base")/g' | 将所有lua文件中的require("FeiBaseComm")替换为require("nphal_base") |
 |文件传输|scp /home/mydirecoty/log.txt root@10.137.81.26:/home/remotedirecoty|将本地文件拷贝到远程机器 |
 |文件传输|scp 10.137.81.26:/home/remotedirecoty/log.txt /home/mydirecoty|将远程服务器上的文件复制到本机 |
 |文件传输|scp -r |拷贝整个目录 |
@@ -15,11 +16,11 @@
 |so依赖|ldd /usr/local/php/bin/php |利用ldd查看可执行程序的依赖库|
 |反汇编|objdump -lG libfei_drv_srv_nphal_588x.dbg  -S libfei_drv_srv_nphal_588x_arm64.so -m arm > disammble.txt | |
 |反汇编|objdump -d -l -S xxx.so  | |
-|格式转换|find -type f ! xargs dos2unix | ！替换为竖杠. winddows文件格式批量转换为linux格式|
-|查看磁盘空间|du -s * ！sort -rn ！head -10|！替换为竖杠.“-a” ：显示每一个文件的磁盘使用量;“-s”：仅显示汇总的使用量;“-k”：报告结果以K字节为单位 |
+|格式转换|find -type f \| xargs dos2unix | winddows文件格式批量转换为linux格式|
+|查看磁盘空间|du -s * \|sort -rn \|head -10|“-a” ：显示每一个文件的磁盘使用量;“-s”：仅显示汇总的使用量;“-k”：报告结果以K字节为单位 |
 |创建快捷方式|ln -s /usr1/code/release release|usr1下为源目录， 第二个参数为新建的快捷方式目录|
 
-#VIM常用命令
+# VIM常用命令
 VIM常用 http://3ms.huawei.com/hi/wiki/11298219.html
 
 |用途|命令格式|详细说明|
@@ -41,7 +42,7 @@ VIM常用 http://3ms.huawei.com/hi/wiki/11298219.html
 |剪切一行|dd，新位置：p||
 |翻屏|屏中：M；屏上：H；屏下：L||
 
-#GIT常用命令
+# GIT常用命令
 git中文社区 http://gitbook.liuhui998.com/index.html
 
 |用途|命令格式|详细说明|
@@ -61,7 +62,8 @@ git中文社区 http://gitbook.liuhui998.com/index.html
 |修改记录查询|git blame -L 100,200 xxx.c |查看100~200行该文件的修改记录|
 |更新提交log|git reset xxxx; git commit --amend; |先根据hash值xxx复位此次提交记录， 使用新log commit重新提交|
 
-#GDB常用命令
+# GDB常用命令
+
 |用途|命令格式|详细说明|
 |----|-----|----|
 |条件断点|b FEI_TBLM_ADD if $r0==0x55e| 函数第一个入参uiTblId为0x55e时断点|
