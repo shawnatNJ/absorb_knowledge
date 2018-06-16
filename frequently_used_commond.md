@@ -11,7 +11,7 @@
 |文件传输|scp 10.137.81.26:/home/remotedirecoty/log.txt /home/mydirecoty|将远程服务器上的文件复制到本机 |
 |文件传输|scp -r |拷贝整个目录 |
 |文件ftp|mget *.log.zip | 拷贝多个以log.zip为后缀的文件|
-|so依赖|objdump -x libfeilfeagt_cortexa15le.so ! grep NEED |！替换为竖杠 |
+|so依赖|objdump -x libfeilfeagt_cortexa15le.so \| grep NEED ||
 |so依赖|readelf -d xxx.so ||
 |so依赖|ldd /usr/local/php/bin/php |利用ldd查看可执行程序的依赖库|
 |反汇编|objdump -lG libfei_drv_srv_nphal_588x.dbg  -S libfei_drv_srv_nphal_588x_arm64.so -m arm > disammble.txt | |
