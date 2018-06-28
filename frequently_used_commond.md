@@ -73,3 +73,10 @@ git中文社区 http://gitbook.liuhui998.com/index.html
 |变量监控|(gdb) watch *(int*)0x3786aa30| 监控0x3786aa30地址的内容变化|
 |watch查看与删除|info watchpoints ； 删除del break| 没有删除watchpoint，删除断点即可|
 
+
+# python常用命令
+
+|用途|命令|详细说明|
+|----|-----|----|
+|断点|python -m pdb test.py | |
+|| | |
